@@ -7,10 +7,10 @@ pipeline {
   stages {
       stage('Clonerepo') {
          steps {
-            git 'https://github.com/bhasker-manikyala/DevOpsClassCodes.git'
+            git 'https://github.com/poojaramawat/DevOpsClassCodes.git'
          }
       }
-      stage('Compile') {
+      stage('mavencompile') {
          steps {
             sh 'mvn compile'
          }
@@ -20,7 +20,7 @@ pipeline {
             sh 'mvn pmd:pmd'
          }
       }
-      stage('UnitTesting') {
+      stage('Unit-test') {
          steps {
             sh 'mvn test'
          }
